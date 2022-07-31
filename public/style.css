@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Rasa', serif;
+}
+
+body {
+  background: #eee;
+  padding: 0 16px;
+}
+
+header {
+  display: flex;
+  background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: 'Pacifico', cursive;
+  font-weight: 200;
+}
+
+.search {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+  width: 40%;
+  height: 32px;
+  position: relative;
+  bottom: 4.5rem;
+}
+
+.search input {
+  text-align: center;
+  border: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.search-icon{
+  color: white;
+  padding-left: 8px;
+  height: 20px;
+}
+
+.search button {
+  background:none;
+  outline: none;
+  border: none;
+}
+
+/* Book List */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,0.4fr));
+  grid-gap: 12px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  padding: 16px;
+}
+
+/* Card */
+.book {
+  display: inline-block;
+  width: 200px;
+  height: fit-content;
+  box-shadow: 0 0 20px #aaa;
+  margin: 25px;
+  padding: 10px 10px 10px 10px;
+  vertical-align: top;
+  transition: height 1s;
+  border-radius: 4%;
+}
+
+.book:hover{
+  transform: scale(0.9);
+  background-color: rgba(255,255,255,0.8);
+}
+
+.cover {
+  border-radius: 4%;
+  height: 250px;
+  overflow:hidden;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+}
+
+.book p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.book .author {
+  font-size: 15px;
+}
+@media (max-width: 941px) {
+  .container {
+    max-width: 700px;
+  }
+  .book {
+    margin: 49px;
+  }
+}
+@media (max-width: 730px) {
+  .book {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+/*********************************
+other
+**********************************/
+
+/**********************************
+display change
+***********************************/
+/*book height smaller, cover opacity, move text onto cover and star too
+animate it */
+#list-th:target .book {
+  height: 100px;
+  width: 250px;
+  padding: 10px;
+  margin: 25px auto 25px auto;
+}
+
+#list-th:target .cover {
+  width: 246px;
+}
+
+#list-th:target img {
+  opacity: .1;
+}
+
+#list-th:target p {
+  margin-top: -62px;
+  margin-left: 20px;
+}
+/* remove button? */
+#large-th:target .book {
+  height: 390px;
+}
